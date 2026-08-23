@@ -1,0 +1,1711 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>Mariage de Colby & Martina</title>
+
+<!-- POLICES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   PARAMETRES GENERAUX
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#10090a;
+    color:#ffffff;
+    font-family:'Montserrat', sans-serif;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =====================================================
+   COEURS FLOTTANTS
+===================================================== */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:rgba(220,30,50,.35);
+    animation:floatHeart linear infinite;
+}
+
+.heart:nth-child(1){
+    left:5%;
+    font-size:22px;
+    animation-duration:9s;
+}
+
+.heart:nth-child(2){
+    left:20%;
+    font-size:15px;
+    animation-duration:13s;
+    animation-delay:2s;
+}
+
+.heart:nth-child(3){
+    left:40%;
+    font-size:30px;
+    animation-duration:11s;
+    animation-delay:1s;
+}
+
+.heart:nth-child(4){
+    left:65%;
+    font-size:18px;
+    animation-duration:15s;
+    animation-delay:4s;
+}
+
+.heart:nth-child(5){
+    left:85%;
+    font-size:27px;
+    animation-duration:10s;
+    animation-delay:3s;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    position:relative;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+
+    padding:35px 22px 55px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.25),
+        rgba(12,4,5,.40),
+        #10090a
+    ),
+
+    url("photo1");
+
+    background-size:cover;
+    background-position:center top;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent 20%,
+        rgba(0,0,0,.55) 100%
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:heroAppear 1.5s ease;
+
+}
+
+@keyframes heroAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.honor{
+
+    display:inline-block;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    padding:11px 18px;
+
+    border:1px solid rgba(255,255,255,.5);
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    background:rgba(0,0,0,.25);
+
+    backdrop-filter:blur(8px);
+
+}
+
+.hero h1{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:65px;
+
+    font-weight:400;
+
+    line-height:.9;
+
+    text-shadow:0 5px 20px #000;
+
+}
+
+.hero h1 span{
+
+    display:block;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:30px;
+
+    margin:12px 0;
+
+}
+
+.hero .date{
+
+    margin-top:24px;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:18px;
+
+    letter-spacing:3px;
+
+}
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:18px;
+
+    z-index:2;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    opacity:.8;
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,20%,50%,80%,100%{
+        transform:translateY(0);
+    }
+
+    40%{
+        transform:translateY(-8px);
+    }
+
+    60%{
+        transform:translateY(-4px);
+    }
+
+}
+
+/* =====================================================
+   CONTENEUR
+===================================================== */
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:600px;
+
+    margin:auto;
+
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section{
+
+    padding:70px 22px;
+
+    position:relative;
+
+}
+
+.section-title{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:40px;
+
+    font-weight:500;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+.gold-line{
+
+    width:55px;
+
+    height:2px;
+
+    margin:0 auto 28px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #d4af6a,
+        transparent
+    );
+
+}
+
+.intro-text{
+
+    text-align:center;
+
+    line-height:1.9;
+
+    font-size:14px;
+
+    color:#e6dfe0;
+
+}
+
+.names-highlight{
+
+    font-family:'Great Vibes', cursive;
+
+    color:#d8af6a;
+
+    font-size:31px;
+
+}
+
+/* =====================================================
+   PHOTO 2
+===================================================== */
+
+.photo-section{
+
+    padding:20px 22px 60px;
+
+}
+
+.photo-frame{
+
+    position:relative;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.photo-frame::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:28px;
+
+}
+
+.photo-frame img{
+
+    width:100%;
+
+    min-height:500px;
+
+    object-fit:cover;
+
+}
+
+/* =====================================================
+   INFORMATIONS MARIAGE
+===================================================== */
+
+.info-section{
+
+    background:
+    linear-gradient(
+        to bottom,
+        #10090a,
+        #1c0d10
+    );
+
+}
+
+.event-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:25px;
+
+    padding:28px 20px;
+
+    margin-top:25px;
+
+    text-align:center;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.event-icon{
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.event-card h3{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:25px;
+
+    font-weight:600;
+
+    color:#d9b46f;
+
+    margin-bottom:12px;
+
+}
+
+.event-card p{
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    color:#eee;
+
+}
+
+.event-time{
+
+    margin-top:10px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+}
+
+/* =====================================================
+   PHOTO 3
+===================================================== */
+
+.photo-last{
+
+    padding:25px 22px 65px;
+
+}
+
+/* =====================================================
+   FORMULAIRE
+===================================================== */
+
+.form-section{
+
+    background:
+    radial-gradient(
+        circle at top,
+        #3a1219,
+        #10090a 65%
+    );
+
+}
+
+.form-intro{
+
+    text-align:center;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    color:#e7dfe0;
+
+    margin-bottom:35px;
+
+}
+
+.form-box{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:30px;
+
+    padding:25px 18px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+
+}
+
+.form-group{
+
+    margin-bottom:30px;
+
+}
+
+.form-label{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+    color:#ffffff;
+
+}
+
+.form-label span{
+
+    color:#d8af6a;
+
+}
+
+/* INPUT NOM */
+
+.name-input{
+
+    width:100%;
+
+    background:rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:15px;
+
+    padding:16px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.name-input:focus{
+
+    border-color:#d8af6a;
+
+    box-shadow:0 0 0 3px rgba(216,175,106,.12);
+
+}
+
+/* =====================================================
+   BOUTONS BOISSONS
+===================================================== */
+
+.drinks-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2, 1fr);
+
+    gap:10px;
+
+}
+
+.drink-option{
+
+    position:relative;
+
+}
+
+.drink-option input{
+
+    position:absolute;
+
+    opacity:0;
+
+}
+
+.drink-option label{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:52px;
+
+    padding:10px;
+
+    text-align:center;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.13);
+
+    font-size:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.drink-option input:checked + label{
+
+    background:#9e1b2a;
+
+    border-color:#e6c57d;
+
+    color:#fff;
+
+    transform:scale(1.02);
+
+    box-shadow:0 8px 20px rgba(158,27,42,.35);
+
+}
+
+/* =====================================================
+   AUTRE BOISSON
+===================================================== */
+
+.other-drink{
+
+    margin-top:15px;
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(0,0,0,.2);
+
+    color:#fff;
+
+    outline:none;
+
+}
+
+.other-drink:focus{
+
+    border-color:#d8af6a;
+
+}
+
+/* =====================================================
+   MESSAGE AUX MARIES
+===================================================== */
+
+.message-box{
+
+    width:100%;
+
+    min-height:130px;
+
+    resize:none;
+
+    padding:16px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(0,0,0,.2);
+
+    color:#fff;
+
+    font-family:'Montserrat', sans-serif;
+
+    outline:none;
+
+    line-height:1.6;
+
+}
+
+.message-box:focus{
+
+    border-color:#d8af6a;
+
+}
+
+/* =====================================================
+   BOUTON WHATSAPP
+===================================================== */
+
+.submit-btn{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:19px 15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #a41629,
+        #d03a4a
+    );
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    font-family:'Montserrat', sans-serif;
+
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    box-shadow:0 15px 30px rgba(164,22,41,.35);
+
+    transition:.3s;
+
+}
+
+.submit-btn:active{
+
+    transform:scale(.97);
+
+}
+
+.whatsapp-note{
+
+    text-align:center;
+
+    font-size:10px;
+
+    line-height:1.6;
+
+    margin-top:17px;
+
+    color:#bfb6b7;
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    position:relative;
+
+    z-index:2;
+
+    padding:55px 20px 35px;
+
+    text-align:center;
+
+    background:#080506;
+
+}
+
+.footer-names{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:42px;
+
+    color:#d8af6a;
+
+}
+
+.footer-heart{
+
+    font-size:24px;
+
+    margin:15px 0;
+
+}
+
+.footer-text{
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#aaa;
+
+}
+
+/* =====================================================
+   ANIMATION APPARITION AU SCROLL
+===================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =====================================================
+   PETIT ECRAN
+===================================================== */
+
+
+/* =====================================================
+   SIGNATURE DU CONCEPTEUR
+===================================================== */
+
+.joseph-credit{
+    margin:30px auto 0;
+    padding-top:22px;
+    border-top:1px solid rgba(216,175,106,.22);
+    max-width:330px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:7px;
+    font-size:9px;
+    letter-spacing:1.4px;
+    line-height:1.7;
+    color:#8f8586;
+    text-transform:uppercase;
+}
+
+.joseph-credit strong{
+    color:#d8af6a;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.joseph-credit a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:10px;
+    letter-spacing:1.5px;
+}
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .section-title{
+        font-size:35px;
+    }
+
+    .drinks-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     COEURS FLOTTANTS
+===================================================== -->
+
+<div class="hearts">
+
+    <div class="heart">❤</div>
+    <div class="heart">♥</div>
+    <div class="heart">❤</div>
+    <div class="heart">♥</div>
+    <div class="heart">❤</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE D'ACCUEIL
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="honor">
+            Vous êtes notre invité d'honneur
+        </div>
+
+        <h1>
+            Colby
+            <span>&</span>
+            Martina
+        </h1>
+
+        <p class="date">
+            05 SEPTEMBRE 2026
+        </p>
+
+    </div>
+
+    <div class="scroll-down">
+        Découvrez notre invitation ↓
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     INVITATION
+===================================================== -->
+
+<section class="reveal">
+
+    <h2 class="section-title">
+        Notre plus beau jour
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="intro-text">
+
+        Avec une immense joie et beaucoup d'amour,
+        <br><br>
+
+        <span class="names-highlight">
+            Colby Masinda & Martina Mbiya
+        </span>
+
+        <br><br>
+
+        ont l'honneur de vous inviter à partager avec eux
+        l'un des plus beaux moments de leur vie :
+
+        <br><br>
+
+        <strong>la célébration de leur mariage.</strong>
+
+        <br><br>
+
+        Votre présence sera pour nous une grande joie
+        et rendra cette journée encore plus belle. ❤️
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     PHOTO 2
+===================================================== -->
+
+<section class="photo-section reveal">
+
+    <div class="photo-frame">
+
+        <img src="photo2" alt="Colby et Martina">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROGRAMME
+===================================================== -->
+
+<section class="info-section reveal">
+
+    <h2 class="section-title">
+        Le programme
+    </h2>
+
+    <div class="gold-line"></div>
+
+
+    <!-- BENEDICTION -->
+
+    <div class="event-card">
+
+        <div class="event-icon">
+            💍
+        </div>
+
+        <h3>
+            Bénédiction nuptiale
+        </h3>
+
+        <p>
+
+            <strong>14h30</strong>
+
+            <br>
+
+            À Bérée
+
+        </p>
+
+        <p class="event-time">
+
+            Samedi 05 septembre 2026
+
+        </p>
+
+    </div>
+
+
+
+    <!-- RECEPTION -->
+
+    <div class="event-card">
+
+        <div class="event-icon">
+            🥂
+        </div>
+
+        <h3>
+            Réception & soirée dansante
+        </h3>
+
+        <p>
+
+            Salle de fête <strong>SAFARI</strong>
+
+            <br>
+
+            Référence : Rond-point Buima
+
+        </p>
+
+        <p class="event-time">
+
+            Après la cérémonie ❤️
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PHOTO 3
+===================================================== -->
+
+<section class="photo-last reveal">
+
+    <div class="photo-frame">
+
+        <img src="photo3" alt="Les futurs mariés">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FORMULAIRE
+===================================================== -->
+
+<section class="form-section reveal">
+
+    <h2 class="section-title">
+        Confirmez votre présence
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="form-intro">
+
+        Cher invité, merci de remplir simplement
+        les informations ci-dessous.
+
+        <br><br>
+
+        Vos réponses nous aideront à mieux préparer
+        cette belle journée. Une fois terminé,
+        appuyez sur <strong>Envoyer ma réponse</strong>. 💌
+
+    </p>
+
+
+    <div class="form-box">
+
+
+        <!-- NOM COMPLET -->
+
+        <div class="form-group">
+
+            <label class="form-label">
+
+                Votre nom complet; Ex: joseph monsemvula <span>*</span>
+
+            </label>
+
+            <input
+                type="text"
+                id="fullname"
+                class="name-input"
+                placeholder="Écrivez votre nom complet"
+            >
+
+        </div>
+
+
+
+        <!-- BOISSONS -->
+
+        <div class="form-group">
+
+            <label class="form-label">
+
+                Votre préférence de boisson <span>*</span>
+
+            </label>
+
+
+            <div class="drinks-grid">
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="castel"
+                        value="Castel"
+                    >
+
+                    <label for="castel">
+                        🍺 Castel
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="tembo"
+                        value="Tembo"
+                    >
+
+                    <label for="tembo">
+                        🍺 Tembo
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="nkoyi"
+                        value="Nkoyi"
+                    >
+
+                    <label for="nkoyi">
+                        🍺 Nkoyi
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="beaufort"
+                        value="Beaufort"
+                    >
+
+                    <label for="beaufort">
+                        🍺 Beaufort
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="trenteTrois"
+                        value="33"
+                    >
+
+                    <label for="trenteTrois">
+                        🍺 33
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="likofi"
+                        value="Likofi"
+                    >
+
+                    <label for="likofi">
+                        🍺 Likofi
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="petitEspace"
+                        value="........"
+                    >
+
+                    <label for="petitEspace">
+                         .........
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="sprit"
+                        value="Sprit"
+                    >
+
+                    <label for="sprit">
+                        🥤 Sprit
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="coca"
+                        value="Coca-Cola"
+                    >
+
+                    <label for="coca">
+                        🥤 Coca-Cola
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="fanta"
+                        value="Fanta"
+                    >
+
+                    <label for="fanta">
+                        🥤 Fanta
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="maltina"
+                        value="Maltina"
+                    >
+
+                    <label for="maltina">
+                        🥤 Maltina
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="energyMalt"
+                        value="Energy Malt"
+                    >
+
+                    <label for="energyMalt">
+                        ⚡ Energy Malt
+                    </label>
+
+                </div>
+
+
+                <div class="drink-option">
+
+                    <input
+                        type="radio"
+                        name="drink"
+                        id="eauMinerale"
+                        value="Eau minérale"
+                    >
+
+                    <label for="eauMinerale">
+                        💧 Eau minérale
+                    </label>
+
+                </div>
+
+
+            </div>
+
+
+            <input
+                type="text"
+                id="otherDrink"
+                class="other-drink"
+                placeholder="Autre préférence (facultatif)"
+            >
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div class="form-group">
+
+            <label class="form-label">
+
+                Un message pour les mariés ❤️
+
+            </label>
+
+            <textarea
+                id="message"
+                class="message-box"
+                placeholder="Écrivez ici vos vœux et vos souhaits pour Colby & Martina..."
+            ></textarea>
+
+        </div>
+
+
+
+        <!-- BOUTON -->
+
+        <button
+            type="button"
+            class="submit-btn"
+            onclick="sendToWhatsApp()"
+        >
+
+            💌 ENVOYER MA RÉPONSE
+
+        </button>
+
+
+        <p class="whatsapp-note">
+
+            Après avoir appuyé sur ce bouton, WhatsApp
+            s'ouvrira avec votre réponse déjà préparée.
+            Il vous suffira d'appuyer sur <strong>Envoyer</strong>. 💚
+
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-names">
+
+        Colby & Martina
+
+    </div>
+
+    <div class="footer-heart">
+        ❤️ 💍 ❤️
+    </div>
+
+    <p class="footer-text">
+
+        Merci de partager ce moment précieux avec nous
+
+    </p>
+
+    <div class="joseph-credit">
+        <span>✦ Invitation conçue avec professionnalisme chez</span>
+        <strong>JOSEPH MONSEMVULA</strong>
+        <a href="tel:+243897997253">+243 897 997 253</a>
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   ANIMATION AU DEFILEMENT
+===================================================== */
+
+const reveals = document.querySelectorAll(".reveal");
+
+
+function revealOnScroll(){
+
+    reveals.forEach(function(element){
+
+        const windowHeight = window.innerHeight;
+
+        const elementTop =
+        element.getBoundingClientRect().top;
+
+        const visiblePoint = 100;
+
+
+        if(elementTop < windowHeight - visiblePoint){
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+
+revealOnScroll();
+
+
+
+/* =====================================================
+   ENVOI VERS WHATSAPP
+===================================================== */
+
+function sendToWhatsApp(){
+
+
+    /* RECUPERATION DU NOM */
+
+    const fullname =
+    document
+    .getElementById("fullname")
+    .value
+    .trim();
+
+
+
+    /* RECUPERATION DE LA BOISSON */
+
+    const selectedDrink =
+    document.querySelector(
+        'input[name="drink"]:checked'
+    );
+
+
+
+    /* AUTRE BOISSON */
+
+    const otherDrink =
+    document
+    .getElementById("otherDrink")
+    .value
+    .trim();
+
+
+
+    /* MESSAGE */
+
+    const message =
+    document
+    .getElementById("message")
+    .value
+    .trim();
+
+
+
+    /* VERIFICATION DU NOM */
+
+    if(fullname === ""){
+
+        alert(
+            "Veuillez écrire votre nom complet avant de continuer."
+        );
+
+        document
+        .getElementById("fullname")
+        .focus();
+
+        return;
+
+    }
+
+
+
+    /* VERIFICATION BOISSON */
+
+    if(!selectedDrink && otherDrink === ""){
+
+        alert(
+            "Veuillez sélectionner votre préférence de boisson ou écrire une autre préférence."
+        );
+
+        return;
+
+    }
+
+
+
+    /* CHOIX FINAL DE LA BOISSON */
+
+    let drink = "";
+
+
+    if(selectedDrink){
+
+        drink = selectedDrink.value;
+
+    }
+    else{
+
+        drink = otherDrink;
+
+    }
+
+
+
+    /* NUMERO WHATSAPP
+       LE + EST RETIRE POUR LE LIEN
+    */
+
+    const phoneNumber =
+    "243895272367";
+
+
+
+    /* MESSAGE QUI SERA ENVOYE */
+
+    let whatsappMessage =
+
+`💍 *RÉPONSE À L'INVITATION DE MARIAGE*
+
+Bonjour Colby & Martina ❤️
+
+👤 *Nom de votre invité(e) :*
+${fullname}
+
+🥂 *Préférence de boisson :*
+${drink}
+
+💌 *Message pour les mariés :*
+${message !== "" ? message : "Tous mes vœux de bonheur aux futurs mariés ! ❤️"}
+
+📅 *Mariage :*
+05 septembre 2026
+
+Avec toutes mes félicitations et au plaisir de célébrer cette belle journée avec vous ! ❤️💍`;
+
+
+    /* TRANSFORMATION DU MESSAGE
+       POUR LE LIEN WHATSAPP */
+
+    const whatsappURL =
+
+    "https://wa.me/"
+    + phoneNumber
+    + "?text="
+    + encodeURIComponent(
+        whatsappMessage
+    );
+
+
+
+    /* OUVERTURE DE WHATSAPP */
+
+    window.location.href =
+    whatsappURL;
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
+```
